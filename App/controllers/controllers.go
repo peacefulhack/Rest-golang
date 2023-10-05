@@ -68,6 +68,13 @@ func (m *ProductControllerRepo) InsertProductData(req *models.InsertProductReque
 	if err != nil {
 		return err
 	}
+
+	m.redis.Del("sort-new-asc")
+	m.redis.Del("sort-new-desc")
+	m.redis.Del("sort-price-asc")
+	m.redis.Del("sort-price-desc")
+	m.redis.Del("sort-name-asc")
+	m.redis.Del("sort-name-desc")
 	return nil
 }
 

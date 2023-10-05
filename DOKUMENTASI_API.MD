@@ -1,85 +1,85 @@
-# Product API Documentation
+# Dokumentasi API Produk
 
-This document provides information on the Product API endpoints and their usage.
+Dokumen ini memberikan informasi tentang endpoint API Produk dan cara penggunaannya.
 
-## Table of Contents
-- [Insert Product](#insert-product)
-- [Sort Products](#sort-products)
+## Daftar Isi
+- [Tambah Produk](#tambah-produk)
+- [Urutkan Produk](#urutkan-produk)
 
-## Insert Product
+## Tambah Produk
 
 ### Endpoint
 ```
-POST /product/insert
+POST localhost:8080/product/insert
 ```
 
-This endpoint is used to insert a new product into the system.
+Endpoint ini digunakan untuk menambahkan produk baru ke sistem.
 
-#### Request Body
-- `ProductName` (string): The name of the product.
-- `ProductDesc` (string): A description of the product.
-- `ProductPrice` (int): The price of the product.
-- `ProductQuantity` (int): The quantity of the product.
+#### Body Permintaan
+- `ProductName` (string): Nama produk.
+- `ProductDesc` (string): Deskripsi produk.
+- `ProductPrice` (int): Harga produk.
+- `ProductQuantity` (int): Jumlah produk.
 
-#### Request Example
+#### Contoh Permintaan
 ```json
 {
-  "ProductName": "Example Product",
-  "ProductDesc": "This is an example product description.",
+  "ProductName": "Contoh Produk",
+  "ProductDesc": "Ini adalah deskripsi produk contoh.",
   "ProductPrice": 20,
   "ProductQuantity": 100
 }
 ```
 
-#### Response
-Upon successful insertion of the product, the API will respond with a status code of `200 OK`.
+#### Respons
+Setelah produk berhasil ditambahkan, API akan memberikan respons dengan kode status `200 OK`.
 
-### Sort Products
+## Urutkan Produk
 
 ### Endpoint
 ```
-GET /product/sort/:key/:order
+GET localhost:8080/product/sort/:key/:order
 ```
 
-This endpoint is used to retrieve a list of products sorted by the specified key and order.
+Endpoint ini digunakan untuk mengambil daftar produk yang diurutkan berdasarkan kunci dan urutan yang ditentukan.
 
-#### Parameters
-- `key` (string): The key to sort the products by. Accepted values are:
-  - "name" (sort by product name)
-  - "price" (sort by product price)
-  - "new" (sort by product ID in ascending order)
-- `order` (string): The order in which to sort the products. Accepted values are:
-  - "asc" (ascending order)
-  - "desc" (descending order)
+#### Parameter
+- `key` (string): Kunci untuk mengurutkan produk. Nilai yang diterima adalah:
+  - "name" (mengurutkan berdasarkan nama produk)
+  - "price" (mengurutkan berdasarkan harga produk)
+  - "new" (mengurutkan berdasarkan waktu produk ditambah)
+- `order` (string): Urutan pengurutan produk. Nilai yang diterima adalah:
+  - "asc" (urutan naik)
+  - "desc" (urutan turun)
 
-#### Request Example
+#### Contoh Permintaan
 ```
-GET /product/sort/price/asc
+GET localhost:8080/product/sort/price/asc
 ```
 
-#### Response
-The API will respond with a list of products sorted according to the specified key and order. Each product object in the list will have the following attributes:
+#### Respons
+API akan memberikan daftar produk yang diurutkan sesuai dengan kunci dan urutan yang ditentukan. Setiap objek produk dalam daftar akan memiliki atribut berikut:
 
-- `Id` (int): The unique identifier of the product.
-- `ProductName` (string): The name of the product.
-- `ProductDesc` (string): A description of the product.
-- `ProductPrice` (int): The price of the product.
-- `ProductQuantity` (int): The quantity of the product.
+- `Id` (int): Identifikasi unik produk.
+- `ProductName` (string): Nama produk.
+- `ProductDesc` (string): Deskripsi produk.
+- `ProductPrice` (int): Harga produk.
+- `ProductQuantity` (int): Jumlah produk.
 
-#### Response Example
+#### Contoh Respons
 ```json
 [
   {
     "Id": 1,
-    "ProductName": "Product A",
-    "ProductDesc": "Description for Product A",
+    "ProductName": "Produk A",
+    "ProductDesc": "Deskripsi untuk Produk A",
     "ProductPrice": 25,
     "ProductQuantity": 50
   },
   {
     "Id": 2,
-    "ProductName": "Product B",
-    "ProductDesc": "Description for Product B",
+    "ProductName": "Produk B",
+    "ProductDesc": "Deskripsi untuk Produk B",
     "ProductPrice": 30,
     "ProductQuantity": 75
   }

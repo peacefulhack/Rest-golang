@@ -73,5 +73,5 @@ Berikut adalah langkah-langkah untuk menjalankan proyek ini:
 
 ## Dokumentasi Tambahan
 
-- Dokumentasi API dapat ditemukan di dalam file [DOKUMENTASI_API.md](DOKUMENTASI_API.md).
+- Dokumentasi API dapat ditemukan di dalam file [DOKUMENTASI_API.md](DOKUMENTASI_API.MD).
 - Untuk mengimplementasikan Redis Cache, ikuti petunjuk di dalam file [REDIS_CACHE.md](REDIS_CACHE.md).
